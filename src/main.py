@@ -66,7 +66,10 @@ def pushDataToInfluxDB(stationCode: str, data: dict):
             "fields": fields
         })
 
-    client.write_points(json_body)
+        try:
+            client.write_points(json_body)
+        except Exception as e:
+            print(f"[{datetime.now()}] Error pushing data to InfluxDB: {e}")
 
 def main():
     print(f"[{datetime.now()}] Pushing data to InfluxDB.")
