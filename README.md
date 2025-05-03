@@ -1,6 +1,7 @@
 # MeteoLT-InfluxDBv1
 
 🇬🇧 Weather data importer from MeteoLT to InfluxDB v1.1+
+
 🇱🇹 Meteorologinių duomenų nusiurbėjas iš MeteoLT į InfluxDB v1.1+
 
 ## Usage
@@ -55,7 +56,7 @@ You can set the `SCHEDULER_INTERVAL` environment variable to make the script run
 | **Variable Name** | **Description** | **Type** | **Default Value** | **Example** |
 |-|-|-|-|-|
 | `STATION_ID` | Weather station ID. | String | | `STATION_ID=kauno-ams` |
-| `SCHEDULER_INTERVAL` | The interval (in hours) at which the script should run. | Integer | `0` (disabled by default) | `SCHEDULER_INTERVAL=2` (runs every 2 hours) |
+| `SCHEDULER_INTERVAL` | The interval (in minutes) at which the script should run. | Integer | `0` (disabled by default) | `SCHEDULER_INTERVAL=60` (runs every 60 minutes) |
 | `INFLUXDB_MEASUREMENT` | The name of the measurement (or data collection) in InfluxDB where the weather data will be stored. | String | `weather` | `INFLUXDB_MEASUREMENT=weather` |
 | `INFLUXDB_HOST` | The hostname or IP address of the InfluxDB server. | String | `localhost` | `INFLUXDB_HOST=192.168.2.20` |
 | `INFLUXDB_PORT` | The port number for the InfluxDB server. | Integer | `8086` | `INFLUXDB_PORT=8086` |

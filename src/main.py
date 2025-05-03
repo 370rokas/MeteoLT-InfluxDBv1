@@ -1,8 +1,6 @@
-import requests, os
+import requests, os, schedule, time
 from influxdb import InfluxDBClient
 from datetime import datetime
-import schedule
-import time
 
 # Get environment variables
 STATION_ID = os.environ.get("STATION_ID", "")
@@ -73,6 +71,7 @@ def pushDataToInfluxDB(stationCode: str, data: dict):
 def main():
     print(f"[{datetime.now()}] Pushing data to InfluxDB.")
     weather_data = getWeatherData(STATION_ID)
+
     if weather_data:
         pushDataToInfluxDB(weather_data["station"]["code"], weather_data["observations"])
     else:
